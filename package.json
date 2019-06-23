@@ -4,6 +4,10 @@
   "description": "small and sleek computing environments",
   "main": "index.js",
   "bin": "index.js",
+  "engines": {
+    "node": ">= 12.0.0",
+    "npm": ">= 6.0.0"
+  },
   "scripts": {
     "clean": "rimraf dist",
     "prepackage": "npm run clean",
