@@ -30,6 +30,13 @@
     "url": "https://github.com/ottomatica/slim/issues"
   },
   "homepage": "https://github.com/ottomatica/slim#readme",
+  "contributors": [
+    {
+      "name": "Patrick Jung",
+      "email": "patrick.pddstudio@gmail.com",
+      "url": "https://github.com/pddstudio"
+    }
+  ],
   "dependencies": {
     "chalk": "^2.4.2",
     "dockerode": "^2.5.8",
