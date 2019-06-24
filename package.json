@@ -4,7 +4,14 @@
   "description": "small and sleek computing environments",
   "main": "index.js",
   "bin": "index.js",
+  "engines": {
+    "node": ">= 12.0.0",
+    "npm": ">= 6.0.0"
+  },
   "scripts": {
+    "clean": "rimraf dist",
+    "prepackage": "npm run clean",
+    "package": "cross-env NODE_ENV=production pkg . --out-path dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -23,9 +30,18 @@
     "url": "https://github.com/ottomatica/slim/issues"
   },
   "homepage": "https://github.com/ottomatica/slim#readme",
+  "contributors": [
+    {
+      "name": "Patrick Jung",
+      "email": "patrick.pddstudio@gmail.com",
+      "url": "https://github.com/pddstudio"
+    }
+  ],
   "dependencies": {
     "chalk": "^2.4.2",
+    "decompress": "^4.2.0",
     "dockerode": "^2.5.8",
+    "dotenv": "^8.0.0",
     "download": "^7.1.0",
     "fs-extra": "^8.0.1",
     "hasbin": "^1.2.3",
@@ -37,5 +53,22 @@
     "sudo-prompt": "^9.0.0",
     "tar": "^4.4.10",
     "uuid": "^3.3.2"
+  },
+  "devDependencies": {
+    "cross-env": "^5.2.0",
+    "pkg": "^4.4.0",
+    "rimraf": "^2.6.3"
+  },
+  "pkg": {
+    "targets": [
+      "node12-win-x64",
+      "node12-linux-x64",
+      "node12-macos-x64"
+    ],
+    "assets": [
+      "scripts/**/*",
+      "lib/**/*",
+      ".env"
+    ]
   }
 }

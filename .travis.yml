@@ -8,6 +8,7 @@ addons:
       - vagrant
       - virtualbox
       - genisoimage
-node_js: 9
+node_js: 
+  - "12"
 install: npm install && npm link
 script: slim build images/alpine3.8-simple && slim images
